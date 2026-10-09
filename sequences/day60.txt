@@ -1,0 +1,9 @@
+GOAL: Soft reorder prompt. Plant the reorder idea gently with a seasonal reason. Ask one easy question.
+--- gulf ---
+{name} bhai,
+Your last {product} order was about 2 months ago. Most of our Gulf buyers reorder around this time — {season}.
+Shall we check availability for you? Same specs as last time or anything different this season?
+--- default ---
+Dear {name},
+It has been about two months since your last {product} order. Many of our buyers start {season} around now.
+Would you like me to check availability for you — same specs as last time, or something different this season?

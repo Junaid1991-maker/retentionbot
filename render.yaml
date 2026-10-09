@@ -1,0 +1,55 @@
+# Render Blueprint — creates both RetentionBot services in one go.
+# Render → New → Blueprint → pick the retentionbot GitHub repo.
+# Values marked sync:false are asked for during setup (paste from your .env).
+# After creating: add Secret File "credentials.json" to BOTH services (Environment → Secret Files).
+services:
+  - type: web
+    name: retentionbot-api
+    runtime: python
+    plan: free
+    region: singapore
+    buildCommand: pip install -r requirements.txt
+    startCommand: uvicorn main:app --host 0.0.0.0 --port $PORT
+    healthCheckPath: /ping
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.11.9
+      - key: GOOGLE_SHEETS_ID
+        sync: false
+      - key: API_KEY
+        sync: false
+      - key: GROQ_API_KEY
+        sync: false
+      - key: GROQ_MODEL
+        value: openai/gpt-oss-120b
+      - key: WA_ACCESS_TOKEN
+        sync: false
+      - key: WA_PHONE_NUMBER_ID
+        value: "1231512983369543"
+      - key: WA_API_VERSION
+        value: v23.0
+      - key: ALERT_WA_NUMBER
+        value: "+923183355708"
+      - key: DEMO_MODE
+        value: "true"
+      - key: DEMO_WA_NUMBER
+        value: "+923183355708"
+      - key: SILENCE_THRESHOLD_DAYS
+        value: "45"
+
+  - type: web
+    name: retentionbot-dashboard
+    runtime: python
+    plan: free
+    region: singapore
+    buildCommand: pip install -r requirements.txt
+    startCommand: streamlit run streamlit_app/app.py --server.port $PORT --server.address 0.0.0.0 --server.headless true
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.11.9
+      - key: GOOGLE_SHEETS_ID
+        sync: false
+      - key: DASHBOARD_PASSWORD
+        sync: false
+      - key: DEMO_MODE
+        value: "true"

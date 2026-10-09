@@ -1,0 +1,9 @@
+GOAL: Silence re-engagement. Buyer has not replied in 45+ days. Warm, zero pressure, keep the door open. Do NOT mention that they haven't replied to earlier messages.
+--- gulf ---
+{name} bhai,
+We haven't heard from you in a while — hope all is well on your end.
+Just want to make sure we're still on your radar for {product}. If your requirements have changed or you need a different spec, we're flexible. Drop us a line whenever you're ready. 🙂
+--- default ---
+Dear {name},
+It has been a while — I hope all is well on your side.
+I just wanted to make sure we are still on your radar for {product}. If your requirements have changed or you need a different spec, we are flexible. Feel free to reach out whenever suits you.

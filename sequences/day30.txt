@@ -1,0 +1,9 @@
+GOAL: Relationship touch. Stay top of mind and share ONE useful update. No direct ask to order.
+--- gulf ---
+Hey {name} bhai,
+Just checking in from our side. Hope the {product} has been working well for your business.
+Quick update — {update}. Agar aapko chahiye toh let us know!
+--- default ---
+Hi {name},
+Just checking in from our side — I hope the {product} has been working well for your business.
+A quick update: {update}. Happy to share details if useful.

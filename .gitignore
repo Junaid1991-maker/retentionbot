@@ -1,0 +1,6 @@
+.env
+credentials.json
+local_store.json
+render_secrets.txt
+__pycache__/
+.pytest_cache/

@@ -1,0 +1,9 @@
+GOAL: Delivery check. Confirm the order arrived well and build trust. No selling at all.
+--- gulf ---
+Salam {name} bhai,
+Hope your {product} order arrived safely and in good condition. Koi issue toh nahi? Quality theek thi?
+Let us know if anything needs attention — we're here. 🙏
+--- default ---
+Dear {name},
+I hope your {product} order arrived safely and in good condition. Was everything as expected with the quality?
+If anything needs attention, please let us know — we're here to help.

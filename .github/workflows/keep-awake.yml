@@ -1,0 +1,22 @@
+# Keeps RetentionBot API + Order Agent awake on Render free tier during working hours,
+# so WhatsApp replies never hit a 50-second "Application loading" cold start.
+# Every 10 min, Mon–Sat, 9 AM–7 PM Pakistan time (04:00–13:59 UTC).
+# Uses ~2 x 10 h x 26 days ≈ 520 Render instance-hours/month — check your Render usage
+# page (free tier has a monthly hour limit shared by all your services).
+name: Keep Render awake
+
+on:
+  schedule:
+    - cron: "*/10 4-13 * * 1-6"
+  workflow_dispatch: {}
+
+jobs:
+  ping:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Ping RetentionBot API
+        run: curl -fsS --max-time 90 "$URL/ping" || echo "RetentionBot not reachable (will retry next run)"
+        env:
+          URL: ${{ secrets.RETENTIONBOT_URL }}
+      - name: Ping Order Agent
+        run: curl -fsS --max-time 90 "https://whatsapp-order-agent-pkyz.onrender.com/health" || echo "Order Agent not reachable"

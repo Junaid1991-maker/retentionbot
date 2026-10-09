@@ -1,0 +1,32 @@
+# RetentionBot daily run — 9:30 AM Pakistan time (04:30 UTC), 30 min after NurtureBot.
+# Same pattern as NurtureBot: GitHub calls the deployed API, so your laptop can be off.
+# Becomes active in Session 5 after the Render deploy. Needs 2 repo secrets:
+#   RETENTIONBOT_URL      e.g. https://retentionbot-api.onrender.com
+#   RETENTIONBOT_API_KEY  same value as API_KEY in .env / Render
+name: RetentionBot daily run
+
+on:
+  schedule:
+    - cron: "30 4 * * *"
+  workflow_dispatch: {}   # "Run workflow" button for manual tests
+
+jobs:
+  run:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Wake up Render (free tier sleeps)
+        run: |
+          for i in 1 2 3 4 5 6; do
+            curl -fsS "$URL/ping" && break || sleep 20
+          done
+        env:
+          URL: ${{ secrets.RETENTIONBOT_URL }}
+
+      - name: Run daily job
+        run: |
+          curl -fsS -X POST "$URL/run-daily" \
+            -H "X-API-Key: $KEY" -H "Content-Type: application/json" \
+            -d '{}' --max-time 300
+        env:
+          URL: ${{ secrets.RETENTIONBOT_URL }}
+          KEY: ${{ secrets.RETENTIONBOT_API_KEY }}

@@ -1,0 +1,9 @@
+GOAL: Direct reorder offer. Clear, friendly offer to prepare a proforma for their usual quantity. Never quote a price.
+--- gulf ---
+Salam {name} bhai,
+It's been 3 months since your last order. We'd love to work together again.
+Current availability is good and pricing is competitive right now. Want me to put together a quick proforma for your usual {quantity} of {product}?
+--- default ---
+Dear {name},
+It has been three months since your last order, and we would be glad to work together again.
+Availability is good at the moment and our pricing is competitive. Shall I prepare a quick proforma for your usual {quantity} of {product}?

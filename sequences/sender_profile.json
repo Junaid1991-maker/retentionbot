@@ -1,0 +1,32 @@
+{
+  "_note": "Facts the AI is ALLOWED to mention. It never invents anything outside this file. Edit per client.",
+  "company": "Karachi Terry Mills (Demo)",
+  "sender_name": "Junaid",
+  "updates": {
+    "towels": [
+      "our new 600gsm premium hotel towel range is now available",
+      "our production is OEKO-TEX Standard 100 certified",
+      "we have good stock on white and cream bath and hand towels"
+    ],
+    "home_textiles": [
+      "our new 300TC sateen bed linen line is now available",
+      "a GOTS-certified organic cotton option is available on request",
+      "our updated sustainability documentation is ready for EU buyers"
+    ],
+    "garments": [
+      "our new seasonal colour range is ready for sampling",
+      "lead times on repeat styles are now shorter",
+      "an organic cotton option is available on request"
+    ],
+    "general": [
+      "we have production capacity open for the coming season",
+      "the same quality and specs as your last order are available"
+    ]
+  },
+  "seasonal_reasons": {
+    "Gulf": "hotel and laundry stocking ahead of the winter tourist season and Ramadan",
+    "EU": "planning stock for the spring/summer season",
+    "US": "planning stock for the next season",
+    "Other": "planning stock for the next season"
+  }
+}
