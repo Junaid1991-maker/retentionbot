@@ -17,6 +17,7 @@ from sheets import MESSAGE_LOG, QUEUE, REORDERS, SILENT, get_store  # noqa: E402
 from streamlit_app.data import active_rows, log_rows, metrics  # noqa: E402
 
 st.set_page_config(page_title="RetentionBot", page_icon="🔁", layout="wide")
+st.markdown('<style>[data-testid="stTable"] tr > th:first-child{display:none}</style>', unsafe_allow_html=True)
 
 # ---------- login ----------
 if config.DASHBOARD_PASSWORD and not st.session_state.get("ok"):
